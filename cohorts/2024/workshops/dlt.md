@@ -63,17 +63,85 @@ The [linked colab notebook](https://colab.research.google.com/drive/1Te-AT0lfh0G
 #### Question 1: What is the sum of the outputs of the generator for limit = 5?
 - **A**: 10.23433234744176
 - **B**: 7.892332347441762
-- **C**: 8.382332347441762
+- **C**: 8.382332347441762 👍
 - **D**: 9.123332347441762
+
+**Approach**
+
+```python
+def square_root_generator(limit):
+    n = 1
+    while n <= limit:
+        yield n ** 0.5
+        n += 1
+
+# Example usage:
+limit = 5
+generator = square_root_generator(limit)
+sum = 0
+
+for sqrt_value in generator:
+    print(sqrt_value)
+    sum += sqrt_value
+
+print("sum: " , sum)
+```
+
+```
+1.0
+1.4142135623730951
+1.7320508075688772
+2.0
+2.23606797749979
+sum:  8.382332347441762
+```
+
 
 #### Question 2: What is the 13th number yielded by the generator?
 - **A**: 4.236551275463989
-- **B**: 3.605551275463989
+- **B**: 3.605551275463989 👍
 - **C**: 2.345551275463989
 - **D**: 5.678551275463989
 
+
+```python
+def square_root_generator(limit):
+    n = 1
+    while n <= limit:
+        yield n ** 0.5
+        n += 1
+
+# Example usage:
+limit = 13
+generator = square_root_generator(limit)
+sum = 0
+
+for i, sqrt_value in enumerate(generator):
+    print(i+1, ": ", sqrt_value)
+    sum += sqrt_value
+
+print("sum: " , sum)
+```
+
+```
+1 :  1.0
+2 :  1.4142135623730951
+3 :  1.7320508075688772
+4 :  2.0
+5 :  2.23606797749979
+6 :  2.449489742783178
+7 :  2.6457513110645907
+8 :  2.8284271247461903
+9 :  3.0
+10 :  3.1622776601683795
+11 :  3.3166247903554
+12 :  3.4641016151377544
+13 :  3.605551275463989
+sum:  32.854555867161245
+```
+
 #### Question 3: Append the 2 generators. After correctly appending the data, calculate the sum of all ages of people.
-- **A**: 353
+- **A**: 353 👍
 - **B**: 365
 - **C**: 378
 - **D**: 390
